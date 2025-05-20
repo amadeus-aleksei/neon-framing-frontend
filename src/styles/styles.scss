@@ -1,4 +1,3 @@
-// styles.scss
 @use "reset";
 
 body {
@@ -74,23 +73,19 @@ body {
   }
 }
 
-.services {
+.services-section {
   padding: 2rem 0;
   text-align: center;
   background-color: #121212;
 
-  .services-inner {
-    @extend .container;
-  }
-
-  .service-list {
+  .services-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 1rem;
     gap: 1.5rem;
 
-    .service-card {
+    .services-card {
       flex: 0 1 360px;
       min-width: 280px;
       max-width: 360px;
@@ -101,7 +96,7 @@ body {
       transition: transform 0.3s;
     }
 
-    .service-card:hover {
+    .services-card:hover {
       transform: scale(1.01);
     }
   }

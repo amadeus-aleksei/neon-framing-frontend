@@ -1,4 +1,3 @@
-    // Contact Component
     function Contact() {
       return (
         <section id="contact" className="contact">
