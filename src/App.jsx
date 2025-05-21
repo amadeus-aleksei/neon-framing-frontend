@@ -8,6 +8,7 @@ import Hero from './components/sections/Hero'
 import Services from './pages/ServicesPage'
 
 import './styles/styles.scss'
+import Pricing from "./pages/Pricing"
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/services" element={<Pricing />} />
             <Route path="/portfolio" element={<Homepage />} />
             <Route path="/about" element={<Homepage />} />
             <Route path="/contact" element={<Homepage />} />
