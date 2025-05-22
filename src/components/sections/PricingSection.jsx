@@ -74,7 +74,7 @@ const PricingSection = () => {
       cards: [
         {
           title: 'Basic Plan',
-          price: '$146/month',
+          price: '$150/month',
           features: [
             '3–5 pages',
             'Template design',
@@ -84,11 +84,11 @@ const PricingSection = () => {
             'SSL security included',
             'Contact form included',
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (6-month minimum)',
+          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (12-month minimum)',
         },
         {
           title: 'Standard Plan',
-          price: '$187/month',
+          price: '$185/month',
           features: [
             '6–10 pages',
             'Semi-custom design',
@@ -98,7 +98,7 @@ const PricingSection = () => {
             'SSL security included',
             'Contact form included',
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (6-month minimum)',
+          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (12-month minimum)',
         },
         {
           title: 'Premium Plan',
@@ -112,7 +112,7 @@ const PricingSection = () => {
             'SSL security included',
             'Contact form included',
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (6-month minimum)',
+          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (12-month minimum)',
         },
       ],
     },
