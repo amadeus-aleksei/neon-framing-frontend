@@ -4,14 +4,14 @@ import { FaLaptopCode } from "react-icons/fa";
 import { MdAbc } from "react-icons/md";
 import { FaHandsHelping } from "react-icons/fa";
 
-const ServiceCard = ({ title, image, features }) => (
+const ServiceCard = ({ title, image, features, flicker = false }) => (
   <div className="services-card">
     {typeof image === 'string' ? (
       <img src={image} alt={`${title} illustration`} className="services-image" />
     ) : (
       <div className="services-image">{image}</div>
     )}
-    <h3>{title}</h3>
+    <h3 className={flicker ? 'flicker' : ''}>{title}</h3>
     <ul>
       {features.map((feature, index) => (
         <li key={index}>{feature}</li>
@@ -31,6 +31,7 @@ const ServicesSection = ({ title, cards }) => (
             title={card.title}
             image={card.image}
             features={card.features}
+            flicker={card.flicker || false}
           />
         ))}
       </div>

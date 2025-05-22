@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const PricingCard = ({ title, price, features, additional, highlightColor }) => (
+const PricingCard = ({ title, price, features, additional, highlightColor, flicker = false }) => (
   <div className="pricing-card" style={{ borderTopColor: highlightColor }}>
-    <h3>{title}</h3>
+    <h3 className={flicker ? 'flicker' : ''}>{title}</h3>
     <p>{price}</p>
     <ul>
       {features.map((feature, index) => (
@@ -21,7 +21,7 @@ const PricingCard = ({ title, price, features, additional, highlightColor }) => 
   </div>
 );
 
-const PricingSection = () => {
+const PricingSection = ({flicker = false}) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const slides = [
@@ -149,7 +149,7 @@ const PricingSection = () => {
           >
             {slides.map((slide, index) => (
               <div key={index} className="carousel-slide">
-                <h3>{slide.title}</h3>
+                <h3 className='flicker'>{slide.title}</h3>
                 <div className="pricing-list">
                   {slide.cards.map((card, cardIndex) => (
                     <PricingCard
