@@ -6,7 +6,12 @@ const PricingCard = ({ title, price, features, additional, highlightColor }) => 
     <p>{price}</p>
     <ul>
       {features.map((feature, index) => (
-        <li key={index}>{feature}</li>
+        <li
+          key={index}
+          className={feature.included ? 'feature-included' : 'feature-excluded'}
+        >
+          {feature.text}
+        </li>
       ))}
     </ul>
     <p>{additional}</p>
@@ -28,43 +33,52 @@ const PricingSection = () => {
           title: 'Basic Plan',
           price: '$3,500 one-time',
           features: [
-            '3–5 pages',
-            'Template design',
-            'Basic content display',
-            'Basic SEO',
-            'Simple CMS',
-            'SSL security included',
-            'Contact form included',
+            { text: '3-5 pages', included: true },
+            { text: 'Template design', included: true },
+            { text: 'Starter SEO Boost', included: true },
+            { text: 'Easy Content Updates', included: true },
+            { text: 'SSL/TLS certificates included', included: true },
+            { text: 'Contact form included', included: true },
+            { text: 'Blog Content System', included: false },
+            { text: 'Custom Design Revisions', included: false },
+            { text: 'E-Commerce Integration', included: false },
+            { text: 'Custom API Integrationa', included: false },
           ],
           additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum)',
         },
         {
           title: 'Standard Plan',
-          price: '$4,500 one-time',
+          price: '$5,000 one-time',
           features: [
-            '6–10 pages',
-            'Semi-custom design',
-            'Dynamic content display',
-            'Basic SEO',
-            'Simple CMS',
-            'SSL security included',
-            'Contact form included',
+            { text: '6-10 pages', included: true },
+            { text: 'Semi-custom design', included: true },
+            { text: 'Growth SEO Strategy', included: true },
+            { text: 'Team Content Management', included: true },
+            { text: 'SSL/TLS certificates included', included: true },
+            { text: 'Contact form included', included: true },
+            { text: 'Blog Content System', included: true },
+            { text: 'Custom Design Revisions', included: true },
+            { text: 'E-Commerce Integration', included: false },
+            { text: 'Custom API Integrationa', included: false },
           ],
           additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum)',
         },
         {
           title: 'Premium Plan',
-          price: '$6,000 one-time',
+          price: '$7,000 one-time',
           features: [
-            '11–20 pages',
-            'Fully-custom design',
-            'Interactive content display',
-            'Advanced SEO',
-            'Multi-user CMS',
-            'SSL security included',
-            'Contact form included',
+            { text: '11-20 pages', included: true },
+            { text: 'Fully-custom design', included: true },
+            { text: 'Ultimate SEO Tactics', included: true },
+            { text: 'Advanced Content Solutions', included: true },
+            { text: 'SSL/TLS certificates included', included: true },
+            { text: 'Contact form included', included: true },
+            { text: 'Blog Content System', included: true },
+            { text: 'Custom Design Revisions', included: true },
+            { text: 'E-Commerce Integration', included: true },
+            { text: 'Custom API Integrationa', included: true },
           ],
-          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum)',
+          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). E-commerce sites may require custom pricing.',
         },
       ],
     },
@@ -74,45 +88,48 @@ const PricingSection = () => {
       cards: [
         {
           title: 'Basic Plan',
-          price: '$150/month',
+          price: '$150–$500/month',
           features: [
-            '3–5 pages',
-            'Template design',
-            'Basic content display',
-            'Basic SEO',
-            'Simple CMS',
-            'SSL security included',
-            'Contact form included',
+            { text: 'Website Design (Template-Based)', included: true },
+            { text: 'Starter SEO Boost', included: true },
+            { text: 'Easy Content Updates', included: true },
+            { text: 'SSL/TLS certificates included', included: true },
+            { text: 'Contact form included', included: true },
+            { text: 'Blog Content System', included: false },
+            { text: 'Custom Design Revisions', included: false },
+            { text: 'E-Commerce Integration', included: false },
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (12-month minimum)',
+          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google Business Profile help (12-month minimum)',
         },
         {
           title: 'Standard Plan',
-          price: '$185/month',
+          price: '$600–$1,500/month',
           features: [
-            '6–10 pages',
-            'Semi-custom design',
-            'Dynamic content display',
-            'Basic SEO',
-            'Simple CMS',
-            'SSL security included',
-            'Contact form included',
+            { text: 'Website Design (Custom)', included: true },
+            { text: 'Growth SEO Strategy', included: true },
+            { text: 'Team Content Management', included: true },
+            { text: 'SSL/TLS certificates included', included: true },
+            { text: 'Contact form included', included: true },
+            { text: 'Blog Content System', included: true },
+            { text: 'Custom Design Revisions', included: true },
+            { text: 'E-Commerce Integration', included: false },
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (12-month minimum)',
+          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google Business Profile help (12-month minimum)',
         },
         {
           title: 'Premium Plan',
-          price: '$250/month',
+          price: '$1,800–$5,000/month',
           features: [
-            '11–20 pages',
-            'Fully-custom design',
-            'Interactive content display',
-            'Advanced SEO',
-            'Multi-user CMS',
-            'SSL security included',
-            'Contact form included',
+            { text: 'Website Design (Advanced)', included: true },
+            { text: 'Ultimate SEO Tactics', included: true },
+            { text: 'Advanced Content Solutions', included: true },
+            { text: 'SSL/TLS certificates included', included: true },
+            { text: 'Contact form included', included: true },
+            { text: 'Blog Content System', included: true },
+            { text: 'Custom Design Revisions', included: true },
+            { text: 'E-Commerce Integration', included: true },
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google business profile help (12-month minimum)',
+          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google Business Profile help (12-month minimum). E-commerce sites may require custom pricing.',
         },
       ],
     },
@@ -150,7 +167,7 @@ const PricingSection = () => {
           </div>
           <div className="carousel-nav">
             <button onClick={handlePrev} aria-label="Previous slide">
-              &larr;
+              ←
             </button>
             <div className="carousel-dots">
               {slides.map((_, index) => (
@@ -163,12 +180,12 @@ const PricingSection = () => {
               ))}
             </div>
             <button onClick={handleNext} aria-label="Next slide">
-              &rarr;
+              →
             </button>
           </div>
         </div>
         <p style={{ marginTop: '2rem', fontStyle: 'italic' }}>
-          For e-commerce websites, we offer custom lump sum pricing. Please contact us for a quote.
+          For e-commerce websites, we offer custom lump sum and subscription pricing. Please contact us for a quote.
         </p>
       </div>
     </section>
