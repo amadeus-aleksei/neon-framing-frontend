@@ -20,47 +20,19 @@ const ServiceCard = ({ title, image, features }) => (
   </div>
 );
 
-const ServicesSection = () => (
+const ServicesSection = ({ title, cards }) => (
   <section className="services-section">
     <div className="container">
-      <h2>What We Offer</h2>
+      <h2>{title}</h2>
       <div className="services-list">
-        <ServiceCard
-          title="Web Design"
-          image={<GiSpiderWeb />}
-          features={[
-            'Stunning, tailored designs',
-            'From templates to custom',
-            'Engaging user experience',
-          ]}
-        />
-        <ServiceCard
-          title="Web Development"
-          image={<FaLaptopCode />}
-          features={[
-            'Robust, secure websites',
-            'Simple or multi-user CMS',
-            'Fast, reliable performance',
-          ]}
-        />
-        <ServiceCard
-          title="SEO Optimization"
-          image={<MdAbc />}
-          features={[
-            'Higher search rankings',
-            'Basic to advanced strategies',
-            'Drive more traffic',
-          ]}
-        />
-        <ServiceCard
-          title="Ongoing Support"
-          image={<FaHandsHelping />}
-          features={[
-            'Hosting and updates',
-            'Unlimited edits, 24/7 support',
-            'Keep your site running',
-          ]}
-        />
+        {cards.map((card, index) => (
+          <ServiceCard 
+            key={index}
+            title={card.title}
+            image={card.image}
+            features={card.features}
+          />
+        ))}
       </div>
     </div>
   </section>

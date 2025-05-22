@@ -1,9 +1,9 @@
-const Hero = () => {
+const Hero = ({title, description, button1}) => {
   return (
     <section className="hero">
-      <h2>Bring Your Digital Vision to Life</h2>
-      <p>Craft stunning, user-focused websites that engage, convert, and grow your brand</p>
-      <button>Get Started</button>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <button>{button1}</button>
     </section>
   );
 }
