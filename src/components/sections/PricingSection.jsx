@@ -26,11 +26,11 @@ const PricingSection = ({flicker = false}) => {
 
   const slides = [
     {
-      title: 'Lump Sum Plans',
+      title: 'One-Time Charge',
       highlightColor: '#00ff00',
       cards: [
         {
-          title: 'Basic Plan',
+          title: 'Basic',
           price: '$3,500 one-time',
           features: [
             { text: '3-5 pages', included: true },
@@ -47,7 +47,7 @@ const PricingSection = ({flicker = false}) => {
           additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum)',
         },
         {
-          title: 'Standard Plan',
+          title: 'Standard',
           price: '$5,000 one-time',
           features: [
             { text: '6-10 pages', included: true },
@@ -64,7 +64,7 @@ const PricingSection = ({flicker = false}) => {
           additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum)',
         },
         {
-          title: 'Premium Plan',
+          title: 'Premium',
           price: '$7,000 one-time',
           features: [
             { text: '11-20 pages', included: true },
@@ -88,7 +88,7 @@ const PricingSection = ({flicker = false}) => {
       cards: [
         {
           title: 'Basic Plan',
-          price: '$150–$500/month',
+          price: '$150/month',
           features: [
             { text: 'Website Design (Template-Based)', included: true },
             { text: 'Starter SEO Boost', included: true },
@@ -99,11 +99,11 @@ const PricingSection = ({flicker = false}) => {
             { text: 'Custom Design Revisions', included: false },
             { text: 'E-Commerce Integration', included: false },
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google Business Profile help (12-month minimum)',
+          additional: 'Includes hosting, unlimited edits, lifetime updates, analytics, Google Business Profile help (12-month minimum)',
         },
         {
           title: 'Standard Plan',
-          price: '$600–$1,500/month',
+          price: '$210/month',
           features: [
             { text: 'Website Design (Custom)', included: true },
             { text: 'Growth SEO Strategy', included: true },
@@ -114,11 +114,11 @@ const PricingSection = ({flicker = false}) => {
             { text: 'Custom Design Revisions', included: true },
             { text: 'E-Commerce Integration', included: false },
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google Business Profile help (12-month minimum)',
+          additional: 'Includes hosting, unlimited edits, lifetime updates, analytics, Google Business Profile help (12-month minimum)',
         },
         {
           title: 'Premium Plan',
-          price: '$1,800–$5,000/month',
+          price: '$300/month',
           features: [
             { text: 'Website Design (Advanced)', included: true },
             { text: 'Ultimate SEO Tactics', included: true },
@@ -129,7 +129,7 @@ const PricingSection = ({flicker = false}) => {
             { text: 'Custom Design Revisions', included: true },
             { text: 'E-Commerce Integration', included: true },
           ],
-          additional: 'Includes hosting, unlimited edits, 24/7 support, lifetime updates, analytics, Google Business Profile help (12-month minimum). E-commerce sites may require custom pricing.',
+          additional: 'Includes hosting, unlimited edits, lifetime updates, analytics, Google Business Profile help (12-month minimum). E-commerce sites may require custom pricing.',
         },
       ],
     },

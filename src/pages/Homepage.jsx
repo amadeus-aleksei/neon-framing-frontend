@@ -14,9 +14,10 @@ const Homepage = () => {
       features: [
         'Stunning, tailored designs',
         'From templates to custom',
-        'Engaging user experience',
+        // <span><span className="flicker">Engaging</span> user experience</span>,
+        'Engaging User Experience'
       ],
-      flicker: false, // This title will flicker
+      flicker: false,
     },
     {
       title: "Web Development",
@@ -26,7 +27,7 @@ const Homepage = () => {
         'Simple or multi-user CMS',
         'Fast, reliable performance',
       ],
-      flicker: false, // This title will not flicker
+      flicker: false,
     },
     {
       title: "SEO Optimization",
@@ -36,7 +37,7 @@ const Homepage = () => {
         'Basic to advanced strategies',
         'Drive more traffic',
       ],
-      flicker: true, // This title will flicker
+      flicker: true,
     },
     {
       title: "Ongoing Support",
@@ -46,7 +47,7 @@ const Homepage = () => {
         'Unlimited edits, 24/7 support',
         'Keep your site running',
       ],
-      flicker: false, // This title will not flicker
+      flicker: false,
     },
   ];
 
