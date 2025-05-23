@@ -31,7 +31,7 @@ const PricingSection = ({flicker = false}) => {
       cards: [
         {
           title: 'Basic',
-          price: '$3,500 one-time',
+          price: '$3,000 one-time',
           features: [
             { text: '3-5 pages', included: true },
             { text: 'Template design', included: true },
