@@ -89,7 +89,7 @@ const PricingSection = ({flicker = false}) => {
       ],
     },
     {
-      title: 'Subscription Plans',
+      title: <span className="purple-glow purple-flicker">Subscription Plans</span>,
       highlightColor: '#A700FF',
       cards: [
         {
@@ -161,6 +161,24 @@ const PricingSection = ({flicker = false}) => {
       <div className="container">
         <h2>Our Pricing Plans</h2>
         <div className="carousel">
+          <div className="carousel-nav">
+            <button onClick={handlePrev} aria-label="Previous slide">
+              ←
+            </button>
+            <div className="carousel-dots">
+              {slides.map((_, index) => (
+                <span
+                  key={index}
+                  className={`dot ${index === activeSlide ? 'active' : ''}`}
+                  onClick={() => setActiveSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button onClick={handleNext} aria-label="Next slide">
+              →
+            </button>
+          </div>
           <div
             className="carousel-slides"
             style={{ transform: `translateX(-${activeSlide * 100}%)` }}

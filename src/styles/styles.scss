@@ -18,9 +18,28 @@ $secondary: #00ffff;
   }
 }
 
+@keyframes purple-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 10px $magenta, 0 0 20px $magenta, 0 0 30px $magenta;
+  }
+
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
 // Helper classes
 .flicker {
   animation: flicker .8s infinite alternate;
+}
+
+.purple-flicker {
+  animation: purple-flicker .8s infinite alternate;
+}
+
+.purple-glow {
+  color: $magenta;
+  text-shadow: 0 0 10px $magenta;
 }
 
 body {
@@ -410,7 +429,7 @@ footer {
     font-size: 2.5rem;
     color: $primary;
     text-shadow: 0 0 10px $primary;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
