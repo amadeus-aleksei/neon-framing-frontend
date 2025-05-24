@@ -220,9 +220,6 @@ const PricingSection = () => {
             </button>
           </div>
         </div>
-        <p style={{ marginTop: '2rem', fontStyle: 'italic' }}>
-          For e-commerce websites, we offer custom lump sum and subscription pricing. Please contact us for a quote.
-        </p>
       </div>
     </section>
   );
