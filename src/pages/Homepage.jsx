@@ -109,11 +109,11 @@ const Homepage = () => {
         }
         description="We manage your entire digital presence—website, hosting, analytics, updates, and more—so you can focus on growing your business."
         button1="Get Started"
-      />
+      />{/*
       <Services
         title="What We Offer"
         cards={servicesCards}
-      />
+      />*/}
       <PricingSection />
       <AddOnsSection
         title="Add-Ons"
