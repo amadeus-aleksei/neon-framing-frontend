@@ -59,7 +59,7 @@ const Homepage = () => {
             Bring Your <span className="flicker">Business</span> Online
           </>
         }
-        description="Craft stunning, user-focused websites that engage, convert, and grow your brand"
+        description="We manage your entire digital presence—website, hosting, analytics, updates, and more—so you can focus on growing your business"
         button1="Get Started"
       />
       <Services
