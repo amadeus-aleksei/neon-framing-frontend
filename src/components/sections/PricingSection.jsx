@@ -21,7 +21,7 @@ const PricingCard = ({ title, price, features, additional, highlightColor, flick
   </div>
 );
 
-const PricingSection = ({flicker = false}) => {
+const PricingSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const slides = [

@@ -14,7 +14,6 @@ const Homepage = () => {
       features: [
         'Stunning, tailored designs',
         'From templates to custom',
-        // <span><span className="flicker">Engaging</span> user experience</span>,
         'Engaging User Experience'
       ],
       flicker: false,
@@ -59,7 +58,7 @@ const Homepage = () => {
             Bring Your <span className="flicker">Business</span> Online
           </>
         }
-        description="We manage your entire digital presence—website, hosting, analytics, updates, and more—so you can focus on growing your business"
+        description="We manage your entire digital presence—website, hosting, analytics, updates, and more—so you can focus on growing your business."
         button1="Get Started"
       />
       <Services
