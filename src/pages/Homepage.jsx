@@ -9,7 +9,7 @@ import { MdAbc } from "react-icons/md";
 const Homepage = () => {
   const servicesCards = [
     {
-      title: "Web Design",
+      title: "Website Design",
       image: <GiSpiderWeb />,
       features: [
         'Stunning, tailored designs',
@@ -20,7 +20,7 @@ const Homepage = () => {
       flicker: false,
     },
     {
-      title: "Web Development",
+      title: "Website Development",
       image: <FaLaptopCode />,
       features: [
         'Robust, secure websites',
