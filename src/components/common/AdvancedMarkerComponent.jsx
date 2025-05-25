@@ -46,7 +46,7 @@ const AdvancedMarkerComponent = ({ position }) => {
     <>
       {showInfoWindow && (
         <InfoWindow position={position} onCloseClick={() => setShowInfoWindow(false)}>
-          <div style={{ color: 'black', backgroundColor: 'white', padding: '' }}>{address}</div>
+          <div className='info-window'>{address}</div>
         </InfoWindow>
       )}
     </>

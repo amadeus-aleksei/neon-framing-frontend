@@ -743,13 +743,12 @@ footer {
 
 
 .google-maps-api-page {
-  margin-top: 3rem;
   .example {
     margin-bottom: 2rem;
-
+    
     .map-container {
       border: 2px solid #ff00ff; /* Neon pink border */
-      border-radius: 8px;
+      // border-radius: 60px;
     }
   }
   input, button {
@@ -764,4 +763,16 @@ footer {
     background: #00ffff;
     color: #1a1a1a;
   }
+}
+
+.map-container {
+  border: 2px solid #ff00ff; /* Neon pink border */
+  margin-top: 2rem;
+  // border-radius: 60px;
+}
+
+.info-window {
+  color: $black;
+  background: $white;
+  padding: '';
 }

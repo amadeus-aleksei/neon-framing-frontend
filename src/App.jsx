@@ -15,8 +15,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/services" element={<Pricing />} />
+            <Route path="/services/google-maps" element={<GoogleMapsAPI />} />
             <Route path="/collection" element={<Homepage />} />
-            <Route path="/collection/google-maps-api" element={<GoogleMapsAPI />} />
             <Route path="/about" element={<Homepage />} />
             <Route path="/contact" element={<Homepage />} />
           </Routes>
