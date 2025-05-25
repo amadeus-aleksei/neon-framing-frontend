@@ -776,3 +776,14 @@ footer {
   background: $white;
   padding: '';
 }
+
+.add-on-details {
+  .btn {
+    text-align: center;
+    margin-top: 1rem; // Adjust margin for better spacing
+    width: 8em;
+  }
+}
+a.btn {
+  text-decoration: none; // Remove underline for anchor tags with btn class
+}

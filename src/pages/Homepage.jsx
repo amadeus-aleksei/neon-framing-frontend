@@ -81,7 +81,8 @@ const Homepage = () => {
     {
       title: "Google Maps API Integration",
       pricing: { oneTime: "$300", monthly: "$25" },
-      finePrint: "Embed interactive maps for location-based services."
+      finePrint: "Embed interactive maps for location-based services.",
+      demoRoute: "/services/google-maps"
     },
     {
       title: "Multilingual Support",

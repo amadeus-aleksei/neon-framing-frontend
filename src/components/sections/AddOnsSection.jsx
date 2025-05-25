@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const AddOnItem = ({ title, pricing, finePrint }) => {
+const AddOnItem = ({ addOn }) => {
+  const { title, pricing, finePrint, demoRoute } = addOn;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -38,6 +40,7 @@ const AddOnItem = ({ title, pricing, finePrint }) => {
         <div className="add-on-details">
           <p className="add-on-pricing">{formatPricing(pricing)}</p>
           <p className="add-on-fine-print">{finePrint}</p>
+          {demoRoute && <Link to={demoRoute} className="btn">View Demo</Link>}
         </div>
       )}
     </div>
@@ -55,9 +58,7 @@ const AddOnsSection = ({ title, caption, addOnsData }) => {
         {addOnsData.map((addOn, index) => (
           <AddOnItem 
             key={index} 
-            title={addOn.title} 
-            pricing={addOn.pricing} 
-            finePrint={addOn.finePrint} 
+            addOn={addOn} 
           />
         ))}
       </div>
