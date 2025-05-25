@@ -22,6 +22,7 @@ const Header = () => {
           <Link to="/collection" className="nav-item" onClick={toggleMenu}>Our Collection</Link>
           <Link to="/about" className="nav-item" onClick={toggleMenu}>About</Link>
           <Link to="/contact" className="nav-item" onClick={toggleMenu}>Contact</Link>
+          <Link to="/collection/google-maps-api" className="nav-item" onClick={toggleMenu}>Google Maps</Link>
         </ul>
       </nav>
 

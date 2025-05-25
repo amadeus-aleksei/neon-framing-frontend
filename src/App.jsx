@@ -3,12 +3,9 @@ import Homepage from "./pages/Homepage"
 
 import Footer from './components/common/Footer'
 import Header from './components/common/Header'
-import Contact from './components/sections/Contact'
-import Hero from './components/sections/Hero'
-import Services from './pages/ServicesPage'
-
 import './styles/styles.scss'
 import Pricing from "./pages/Pricing"
+import GoogleMapsAPI from "./components/sections/GoogleMapsAPI"
 
 function App() {
   return (
@@ -19,6 +16,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/services" element={<Pricing />} />
             <Route path="/collection" element={<Homepage />} />
+            <Route path="/collection/google-maps-api" element={<GoogleMapsAPI />} />
             <Route path="/about" element={<Homepage />} />
             <Route path="/contact" element={<Homepage />} />
           </Routes>
