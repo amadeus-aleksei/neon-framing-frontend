@@ -17,7 +17,6 @@ const GoogleMapsAPI = () => {
   const apiKey = 'AIzaSyBH201E6Ka1ADKdVvunD860kaQDsKMkrvQ'; // Replace with your actual API key
 
   return (
-    <LoadScript googleMapsApiKey={apiKey} libraries={['marker']} mapIds={['DEMO_MAP_ID']}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         mapContainerClassName="map-container"
@@ -27,7 +26,6 @@ const GoogleMapsAPI = () => {
       >
         <AdvancedMarkerComponent position={defaultCenter} />
       </GoogleMap>
-    </LoadScript>
   );
 };
 

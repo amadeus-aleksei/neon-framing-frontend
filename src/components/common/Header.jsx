@@ -19,7 +19,6 @@ const Header = () => {
         <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
           <Link to="/" className="nav-item" onClick={toggleMenu}>Home</Link>
           <Link to="/services" className="nav-item" onClick={toggleMenu}>Services</Link>
-          <Link to="/services/google-maps" className="nav-item" onClick={toggleMenu}>Google Maps</Link>
           <Link to="/collection" className="nav-item" onClick={toggleMenu}>Our Collection</Link>
           <Link to="/about" className="nav-item" onClick={toggleMenu}>About</Link>
           <Link to="/contact" className="nav-item" onClick={toggleMenu}>Contact</Link>
