@@ -36,12 +36,11 @@ const PricingSection = () => {
     setShowIndicator(false);
   };
 
-  // Define swipe handlers using useSwipeable
   const handlers = useSwipeable({
-    onSwipedLeft: handleNext,  // Swipe left to go to the next slide
-    onSwipedRight: handlePrev, // Swipe right to go to the previous slide
-    preventDefaultTouchmoveEvent: true, // Prevent scrolling during swipe
-    trackMouse: true, // Optional: Enable mouse dragging for testing
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
   });
 
   const slides = [
@@ -196,10 +195,9 @@ const PricingSection = () => {
               →
             </button>
           </div>
-          {/* Replace <Swipeable> with handlers spread onto the div */}
           <div
             className="carousel-slides"
-            {...handlers} // Spread swipe handlers here
+            {...handlers}
             style={{ transform: `translateX(-${activeSlide * 100}%)` }}
           >
             {slides.map((slide, index) => (
@@ -220,11 +218,6 @@ const PricingSection = () => {
               </div>
             ))}
           </div>
-          {showIndicator && (
-            <div className="swipe-indicator">
-              Swipe to see more
-            </div>
-          )}
           <div className="carousel-nav">
             <button onClick={handlePrev} aria-label="Previous slide">
               ←
