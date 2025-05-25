@@ -6,6 +6,7 @@ import Services from "../components/sections/ServicesSection";
 import { FaHandsHelping, FaLaptopCode } from "react-icons/fa";
 import { MdAbc } from "react-icons/md";
 import AddOnsSection from "../components/sections/AddOnsSection";
+import AnimationShowcase from "../components/sections/AnimationShowcase";
 
 const Homepage = () => {
   const servicesCards = [

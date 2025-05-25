@@ -159,7 +159,7 @@ const PricingSection = () => {
   return (
     <section className="pricing-section">
       <div className="container">
-        <h2>Our Pricing Plans</h2>
+        <h2>Our Pricing</h2>
         <div className="carousel">
           <div className="carousel-nav">
             <button onClick={handlePrev} aria-label="Previous slide">
