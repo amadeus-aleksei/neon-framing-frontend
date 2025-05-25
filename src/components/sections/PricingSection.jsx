@@ -65,7 +65,7 @@ const PricingSection = () => {
             { text: 'Google Business Profile Management', included: false },
             { text: 'Custom Website Animations', included: false },
           ],
-          additional: 'Hosting & Maintenance included during 2-year minimum contract. After 2 years: Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
+          additional: ' Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
         },
         {
           title: 'Standard',
@@ -84,7 +84,7 @@ const PricingSection = () => {
             { text: 'Google Business Profile Management', included: false },
             { text: 'Custom Website Animations', included: false },
           ],
-          additional: 'Hosting & Maintenance included during 2-year minimum contract. After 2 years: Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
+          additional: ' Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
         },
         {
           title: 'Premium',
@@ -103,7 +103,7 @@ const PricingSection = () => {
             { text: 'Google Business Profile Management', included: true },
             { text: 'Custom Website Animations', included: true },
           ],
-          additional: 'Hosting & Maintenance included during 2-year minimum contract. After 2 years: Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
+          additional: ' Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
         },
       ],
     },
@@ -177,24 +177,6 @@ const PricingSection = () => {
       <div className="container">
         <h2>Our Pricing</h2>
         <div className="carousel">
-          <div className="carousel-nav">
-            <button onClick={handlePrev} aria-label="Previous slide">
-              ←
-            </button>
-            <div className="carousel-dots">
-              {slides.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${index === activeSlide ? 'active' : ''}`}
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-            <button onClick={handleNext} aria-label="Next slide">
-              →
-            </button>
-          </div>
           <div
             className="carousel-slides"
             {...handlers}
@@ -202,7 +184,30 @@ const PricingSection = () => {
           >
             {slides.map((slide, index) => (
               <div key={index} className="carousel-slide">
+                {/* Top Navigation */}
+                <div className="carousel-nav">
+                  <button onClick={handlePrev} aria-label="Previous slide">
+                    ←
+                  </button>
+                  <div className="carousel-dots">
+                    {slides.map((_, dotIndex) => (
+                      <span
+                        key={dotIndex}
+                        className={`dot ${dotIndex === activeSlide ? 'active' : ''}`}
+                        onClick={() => setActiveSlide(dotIndex)}
+                        aria-label={`Go to slide ${dotIndex + 1}`}
+                      />
+                    ))}
+                  </div>
+                  <button onClick={handleNext} aria-label="Next slide">
+                    →
+                  </button>
+                </div>
+
+                {/* Slide Title */}
                 <h3 className="flicker">{slide.title}</h3>
+
+                {/* Pricing Cards */}
                 <div className="pricing-list">
                   {slide.cards.map((card, cardIndex) => (
                     <PricingCard
@@ -215,26 +220,28 @@ const PricingSection = () => {
                     />
                   ))}
                 </div>
+
+                {/* Bottom Navigation */}
+                <div className="carousel-nav">
+                  <button onClick={handlePrev} aria-label="Previous slide">
+                    ←
+                  </button>
+                  <div className="carousel-dots">
+                    {slides.map((_, dotIndex) => (
+                      <span
+                        key={dotIndex}
+                        className={`dot ${dotIndex === activeSlide ? 'active' : ''}`}
+                        onClick={() => setActiveSlide(dotIndex)}
+                        aria-label={`Go to slide ${dotIndex + 1}`}
+                      />
+                    ))}
+                  </div>
+                  <button onClick={handleNext} aria-label="Next slide">
+                    →
+                  </button>
+                </div>
               </div>
             ))}
-          </div>
-          <div className="carousel-nav">
-            <button onClick={handlePrev} aria-label="Previous slide">
-              ←
-            </button>
-            <div className="carousel-dots">
-              {slides.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${index === activeSlide ? 'active' : ''}`}
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-            <button onClick={handleNext} aria-label="Next slide">
-              →
-            </button>
           </div>
         </div>
       </div>

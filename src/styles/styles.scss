@@ -485,6 +485,10 @@ footer {
     text-shadow: 0 0 5px $triadic;
     margin-bottom: 1.5rem;
   }
+
+  .carousel-nav {
+    margin: 1rem 0; /* Add spacing above and below navigation */
+  }
 }
 
 .pricing-list {
