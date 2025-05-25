@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 
 const PricingCard = ({ title, price, features, additional, highlightColor, flicker = false }) => (
   <div className="pricing-card" style={{ borderTopColor: highlightColor }}>
@@ -23,6 +24,25 @@ const PricingCard = ({ title, price, features, additional, highlightColor, flick
 
 const PricingSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showIndicator, setShowIndicator] = useState(true);
+
+  const handlePrev = () => {
+    setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setShowIndicator(false);
+  };
+
+  const handleNext = () => {
+    setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setShowIndicator(false);
+  };
+
+  // Define swipe handlers using useSwipeable
+  const handlers = useSwipeable({
+    onSwipedLeft: handleNext,  // Swipe left to go to the next slide
+    onSwipedRight: handlePrev, // Swipe right to go to the previous slide
+    preventDefaultTouchmoveEvent: true, // Prevent scrolling during swipe
+    trackMouse: true, // Optional: Enable mouse dragging for testing
+  });
 
   const slides = [
     {
@@ -55,7 +75,7 @@ const PricingSection = () => {
             { text: '10 pages', included: true },
             { text: 'Semi-custom Design', included: true },
             { text: 'Growth SEO Strategy', included: true },
-            { text: 'Team Content Management', included: true },
+            { text: "Team Content Management", included: true },
             { text: 'SSL/TLS Encryption', included: true },
             { text: 'Google Business Profile and Analytics Setup', included: true },
             { text: 'Standard Contact Form', included: true },
@@ -153,9 +173,6 @@ const PricingSection = () => {
     },
   ];
 
-  const handlePrev = () => setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  const handleNext = () => setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-
   return (
     <section className="pricing-section">
       <div className="container">
@@ -179,13 +196,15 @@ const PricingSection = () => {
               →
             </button>
           </div>
+          {/* Replace <Swipeable> with handlers spread onto the div */}
           <div
             className="carousel-slides"
+            {...handlers} // Spread swipe handlers here
             style={{ transform: `translateX(-${activeSlide * 100}%)` }}
           >
             {slides.map((slide, index) => (
               <div key={index} className="carousel-slide">
-                <h3 className='flicker'>{slide.title}</h3>
+                <h3 className="flicker">{slide.title}</h3>
                 <div className="pricing-list">
                   {slide.cards.map((card, cardIndex) => (
                     <PricingCard
@@ -201,6 +220,11 @@ const PricingSection = () => {
               </div>
             ))}
           </div>
+          {showIndicator && (
+            <div className="swipe-indicator">
+              Swipe to see more
+            </div>
+          )}
           <div className="carousel-nav">
             <button onClick={handlePrev} aria-label="Previous slide">
               ←
