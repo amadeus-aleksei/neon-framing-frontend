@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
-import { GoogleMap, LoadScript, Marker, useGoogleMap } from '@react-google-maps/api';
+import React from 'react';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import AdvancedMarkerComponent from '../common/AdvancedMarkerComponent'; // Import the separate component
+// import './styles.scss'; // Import your SCSS file (adjust the path as necessary)
 
 const mapContainerStyle = {
   width: '100%',
@@ -15,48 +17,18 @@ const GoogleMapsAPI = () => {
   const apiKey = 'AIzaSyBH201E6Ka1ADKdVvunD860kaQDsKMkrvQ'; // Replace with your actual API key
 
   return (
-    <LoadScript googleMapsApiKey={apiKey} libraries={['marker']}>
-      <div className="google-maps-api-page">
-        <h1>Google Maps API Addon</h1>
-
-        <section className="examples">
-          <h2>Example Usage</h2>
-
-          <div className="example">
-            <h3>Simple Map with Marker</h3>
-            <GoogleMap
-              mapContainerStyle={mapContainerStyle}
-              mapContainerClassName="map-container"
-              center={defaultCenter}
-              zoom={15}
-            >
-              {/* Standard Marker (quick fix) */}
-              <Marker position={defaultCenter} title="Neon Framing Store" />
-            </GoogleMap>
-          </div>
-        </section>
-      </div>
+    <LoadScript googleMapsApiKey={apiKey} libraries={['marker']} mapIds={['DEMO_MAP_ID']}>
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        mapContainerClassName="map-container"
+        center={defaultCenter}
+        zoom={15}
+        options={{ mapId: 'DEMO_MAP_ID' }}
+      >
+        <AdvancedMarkerComponent position={defaultCenter} />
+      </GoogleMap>
     </LoadScript>
   );
-};
-
-// Custom component for AdvancedMarkerElement
-const AdvancedMarkerComponent = ({ position }) => {
-  const map = useGoogleMap();
-
-  useEffect(() => {
-    if (map && window.google && window.google.maps && window.google.maps.marker) {
-      const marker = new window.google.maps.marker.AdvancedMarkerElement({
-        position,
-        map,
-      });
-      return () => {
-        marker.map = null;
-      };
-    }
-  }, [map, position]);
-
-  return null;
 };
 
 export default GoogleMapsAPI;
