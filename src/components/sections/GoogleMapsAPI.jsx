@@ -97,34 +97,39 @@ const GoogleMapsAPI = () => {
   };
 
   return (
-    <GoogleMap
-      mapContainerStyle={mapContainerStyle}
-      mapContainerClassName="map-container"
-      center={center}
-      zoom={15}
-      // options={{ styles: darkModeStyles }} // Apply dark mode styles
-    >
-      <Autocomplete
-        onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
-        onPlaceChanged={onPlaceChanged}
-      >
-        <div className="input-container">
-          <input
-            ref={inputRef}
-            type="text"
-            onChange={handleInputChange}
-            placeholder="Enter an address"
-            className="autocomplete-input"
-          />
-          {hasText && (
-            <button className="clear-button" onClick={handleClear}>
-              ×
-            </button>
-          )}
-        </div>
-      </Autocomplete>
-      <Marker position={markerPosition} />
-    </GoogleMap>
+    <div className="map-page-container">
+      <div className="address-form-container">
+        <Autocomplete
+          onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
+          onPlaceChanged={onPlaceChanged}
+        >
+          <div className="input-container">
+            <input
+              ref={inputRef}
+              type="text"
+              onChange={handleInputChange}
+              placeholder="Enter an address"
+              className="address-input"
+            />
+            {hasText && (
+              <button className="clear-button" onClick={handleClear}>
+                ×
+              </button>
+            )}
+          </div>
+        </Autocomplete>
+      </div>
+      <div className="map-container">
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={center}
+          zoom={15}
+          // options={{ styles: darkModeStyles }} // Apply dark mode styles
+        >
+          <Marker position={markerPosition} />
+        </GoogleMap>
+      </div>
+    </div>
   );
 };
 
