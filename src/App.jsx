@@ -9,11 +9,10 @@ import Pricing from "./pages/Pricing"
 import GoogleMapsAPI from "./components/sections/GoogleMapsAPI"
 
 function App() {
-    const apiKey = 'AIzaSyBH201E6Ka1ADKdVvunD860kaQDsKMkrvQ'; // Replace with your actual API key
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
-        <LoadScript googleMapsApiKey={apiKey} libraries={['marker']} mapIds={['DEMO_MAP_ID']}>
-
+    <LoadScript googleMapsApiKey={apiKey} libraries={['marker', 'places']} mapIds={['DEMO_MAP_ID']}>
       <BrowserRouter>
         <Header />
         <main>
@@ -28,7 +27,7 @@ function App() {
         </main>
         <Footer />
       </BrowserRouter>
-          </LoadScript>
+    </LoadScript>
 
   )
 }
