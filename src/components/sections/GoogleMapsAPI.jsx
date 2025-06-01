@@ -8,8 +8,8 @@ const mapContainerStyle = {
 };
 
 const defaultCenter = {
-  lat: 41.83350,
-  lng: -87.72205457322676,
+  lat: 41.878876,
+  lng: -87.635915,
 };
 
 // Dark mode styles for the map
@@ -134,3 +134,38 @@ const GoogleMapsAPI = () => {
 };
 
 export default GoogleMapsAPI;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

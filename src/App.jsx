@@ -7,6 +7,7 @@ import Header from './components/common/Header'
 import './styles/styles.scss'
 import Pricing from "./pages/Pricing"
 import GoogleMapsAPI from "./components/sections/GoogleMapsAPI"
+import Test from "./pages/Test";
 
 function App() {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
@@ -23,6 +24,7 @@ function App() {
             <Route path="/collection" element={<Homepage />} />
             <Route path="/about" element={<Homepage />} />
             <Route path="/contact" element={<Homepage />} />
+            <Route path="/test" element={<Test />} />
           </Routes>
         </main>
         <Footer />
