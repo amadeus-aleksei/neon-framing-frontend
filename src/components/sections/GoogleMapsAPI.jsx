@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { GoogleMap, Marker, Autocomplete } from '@react-google-maps/api';
-// import './GoogleMapsAPI.scss';
+// import './GoogleMapsAPI.scss'; // Uncommented to apply styles
 
 const mapContainerStyle = {
   width: '100%',
@@ -99,11 +99,11 @@ const GoogleMapsAPI = () => {
   return (
     <div className="map-page-container">
       <div className="address-form-container">
-        <Autocomplete
-          onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
-          onPlaceChanged={onPlaceChanged}
-        >
-          <div className="input-container">
+        <div className="input-container">
+          <Autocomplete
+            onLoad={(autocomplete) => (autocompleteRef.current = autocomplete)}
+            onPlaceChanged={onPlaceChanged}
+          >
             <input
               ref={inputRef}
               type="text"
@@ -111,20 +111,20 @@ const GoogleMapsAPI = () => {
               placeholder="Enter an address"
               className="address-input"
             />
-            {hasText && (
-              <button className="clear-button" onClick={handleClear}>
-                ×
-              </button>
-            )}
-          </div>
-        </Autocomplete>
+          </Autocomplete>
+          {hasText && (
+            <button className="clear-button" onClick={handleClear}>
+              ×
+            </button>
+          )}
+        </div>
       </div>
       <div className="map-container">
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
           center={center}
           zoom={15}
-          // options={{ styles: darkModeStyles }} // Apply dark mode styles
+          options={{ styles: darkModeStyles }}
         >
           <Marker position={markerPosition} />
         </GoogleMap>
