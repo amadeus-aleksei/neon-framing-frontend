@@ -124,7 +124,7 @@ const GoogleMapsAPI = () => {
           mapContainerStyle={mapContainerStyle}
           center={center}
           zoom={15}
-          options={{ styles: darkModeStyles }}
+          // options={{ styles: darkModeStyles }}
         >
           <Marker position={markerPosition} />
         </GoogleMap>
@@ -134,38 +134,3 @@ const GoogleMapsAPI = () => {
 };
 
 export default GoogleMapsAPI;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
