@@ -50,7 +50,7 @@ const PricingSection = () => {
       cards: [
         {
           title: 'Basic',
-          price: '$3000 one-time',
+          price: '$2500 one-time',
           features: [
             { text: '5 pages', included: true },
             { text: 'Template design', included: true },
@@ -65,11 +65,11 @@ const PricingSection = () => {
             { text: 'Google Business Profile Management', included: false },
             { text: 'Custom Website Animations', included: false },
           ],
-          additional: ' Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
+          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
         },
         {
           title: 'Standard',
-          price: '$5000 one-time',
+          price: '$4500 one-time',
           features: [
             { text: '10 pages', included: true },
             { text: 'Semi-custom Design', included: true },
@@ -84,11 +84,11 @@ const PricingSection = () => {
             { text: 'Google Business Profile Management', included: false },
             { text: 'Custom Website Animations', included: false },
           ],
-          additional: ' Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
+          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
         },
         {
           title: 'Premium',
-          price: '$7000 one-time',
+          price: '$6500 one-time',
           features: [
             { text: '15 pages', included: true },
             { text: 'Fully Custom Design', included: true },
@@ -103,7 +103,7 @@ const PricingSection = () => {
             { text: 'Google Business Profile Management', included: true },
             { text: 'Custom Website Animations', included: true },
           ],
-          additional: ' Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
+          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
         },
       ],
     },
@@ -113,7 +113,7 @@ const PricingSection = () => {
       cards: [
         {
           title: 'Basic',
-          price: '$150/month',
+          price: '$110/month',
           features: [
             { text: '5 pages', included: true },
             { text: 'Template design', included: true },
@@ -132,7 +132,7 @@ const PricingSection = () => {
         },
         {
           title: 'Standard',
-          price: '$230/month',
+          price: '$195/month',
           features: [
             { text: '10 pages', included: true },
             { text: 'Semi-custom Design', included: true },
@@ -151,7 +151,7 @@ const PricingSection = () => {
         },
         {
           title: 'Premium',
-          price: '$310/month',
+          price: '$285/month',
           features: [
             { text: '15 pages', included: true },
             { text: 'Fully Custom Design', included: true },
