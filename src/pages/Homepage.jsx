@@ -12,6 +12,12 @@ const Homepage = () => {
 
   const addOnsData = [
     {
+      title: "Google Maps API Integration",
+      pricing: { oneTime: "$300", monthly: "$25" },
+      finePrint: "Embed interactive maps for location-based services.",
+      demoRoute: "/services/google-maps"
+    },
+    {
       title: "Live Chat Support",
       pricing: { oneTime: "$200", monthly: "$20" },
       finePrint: "Implement live chat for real-time customer support.",
@@ -35,12 +41,6 @@ const Homepage = () => {
       title: "Booking System",
       pricing: { oneTime: "$400", monthly: "$40" },
       finePrint: "Integrate a booking system for appointments, including calendar sync and notifications. Monthly fee includes software subscription and support."
-    },
-    {
-      title: "Google Maps API Integration",
-      pricing: { oneTime: "$300", monthly: "$25" },
-      finePrint: "Embed interactive maps for location-based services.",
-      demoRoute: "/services/google-maps"
     },
     {
       title: "Multilingual Support",

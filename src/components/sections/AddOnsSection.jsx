@@ -14,7 +14,7 @@ const AddOnItem = ({ addOn }) => {
       return 'Contact for pricing';
     }
     if (pricing.oneTime && pricing.monthly) {
-      return `One-Time: ${pricing.oneTime} or Monthly: ${pricing.monthly}/month (1-year minimum)`;
+      return `One-Time: ${pricing.oneTime} or Monthly: ${pricing.monthly}/month (1-year)`;
     } else if (pricing.oneTime) {
       return `One-Time: ${pricing.oneTime}`;
     } else if (pricing.monthly) {
