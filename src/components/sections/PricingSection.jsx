@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
-const PricingCard = ({ title, price, features, additional, highlightColor, flicker = false }) => (
+const PricingCard = ({ title, price, features, additional, highlightColor }) => (
   <div className="pricing-card" style={{ borderTopColor: highlightColor }}>
-    <h3 className={flicker ? 'flicker' : ''}>{title}</h3>
+    <h3>{title}</h3>
     <p>{price}</p>
     <ul>
       {features.map((feature, index) => (
@@ -22,7 +22,7 @@ const PricingCard = ({ title, price, features, additional, highlightColor, flick
   </div>
 );
 
-const PricingSection = () => {
+const PricingSection = ({ title, slides }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [showIndicator, setShowIndicator] = useState(true);
 
@@ -43,139 +43,10 @@ const PricingSection = () => {
     trackMouse: true,
   });
 
-  const slides = [
-    {
-      title: 'One-Time Charge',
-      highlightColor: '#00ff00',
-      cards: [
-        {
-          title: 'Basic',
-          price: '$2500 one-time',
-          features: [
-            { text: '5 pages', included: true },
-            { text: 'Template design', included: true },
-            { text: 'Starter SEO Boost', included: true },
-            { text: 'Easy Content Updates', included: true },
-            { text: 'SSL/TLS Encryption', included: true },
-            { text: 'Google Business Profile and Analytics Setup', included: true },
-            { text: 'Standard Contact Form', included: true },
-            { text: 'Custom Domain Email Setup', included: false },
-            { text: 'Google Business Profile Optimization', included: false },
-            { text: 'Local SEO Optimization', included: false },
-            { text: 'Google Business Profile Management', included: false },
-            { text: 'Custom Website Animations', included: false },
-          ],
-          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
-        },
-        {
-          title: 'Standard',
-          price: '$4500 one-time',
-          features: [
-            { text: '10 pages', included: true },
-            { text: 'Semi-custom Design', included: true },
-            { text: 'Growth SEO Strategy', included: true },
-            { text: "Team Content Management", included: true },
-            { text: 'SSL/TLS Encryption', included: true },
-            { text: 'Google Business Profile and Analytics Setup', included: true },
-            { text: 'Standard Contact Form', included: true },
-            { text: 'Custom Domain Email Setup', included: true },
-            { text: 'Google Business Profile Optimization', included: true },
-            { text: 'Local SEO Optimization', included: true },
-            { text: 'Google Business Profile Management', included: false },
-            { text: 'Custom Website Animations', included: false },
-          ],
-          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
-        },
-        {
-          title: 'Premium',
-          price: '$6500 one-time',
-          features: [
-            { text: '15 pages', included: true },
-            { text: 'Fully Custom Design', included: true },
-            { text: 'Ultimate SEO Tactics', included: true },
-            { text: 'Advanced Content Solutions', included: true },
-            { text: 'SSL/TLS Encryption', included: true },
-            { text: 'Google Business Profile and Analytics Setup', included: true },
-            { text: 'Standard Contact Form', included: true },
-            { text: 'Custom Domain Email Setup', included: true },
-            { text: 'Google Business Profile Optimization', included: true },
-            { text: 'Local SEO Optimization', included: true },
-            { text: 'Google Business Profile Management', included: true },
-            { text: 'Custom Website Animations', included: true },
-          ],
-          additional: 'Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
-        },
-      ],
-    },
-    {
-      title: <span className="purple-glow purple-flicker">Subscription Plans</span>,
-      highlightColor: '#A700FF',
-      cards: [
-        {
-          title: 'Basic',
-          price: '$110/month',
-          features: [
-            { text: '5 pages', included: true },
-            { text: 'Template design', included: true },
-            { text: 'Starter SEO Boost', included: true },
-            { text: 'Easy Content Updates', included: true },
-            { text: 'SSL/TLS Encryption', included: true },
-            { text: 'Google Business Profile and Analytics Setup', included: true },
-            { text: 'Standard Contact Form', included: true },
-            { text: 'Custom Domain Email Setup', included: false },
-            { text: 'Google Business Profile Optimization', included: false },
-            { text: 'Local SEO Optimization', included: false },
-            { text: 'Google Business Profile Management', included: false },
-            { text: 'Custom Website Animations', included: false },
-          ],
-          additional: 'Hosting & Maintenance included during 2-year minimum contract. After 2 years: Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
-        },
-        {
-          title: 'Standard',
-          price: '$195/month',
-          features: [
-            { text: '10 pages', included: true },
-            { text: 'Semi-custom Design', included: true },
-            { text: 'Growth SEO Strategy', included: true },
-            { text: 'Team Content Management', included: true },
-            { text: 'SSL/TLS Encryption', included: true },
-            { text: 'Google Business Profile and Analytics Setup', included: true },
-            { text: 'Standard Contact Form', included: true },
-            { text: 'Custom Domain Email Setup', included: true },
-            { text: 'Google Business Profile Optimization', included: true },
-            { text: 'Local SEO Optimization', included: true },
-            { text: 'Google Business Profile Management', included: false },
-            { text: 'Custom Website Animations', included: false },
-          ],
-          additional: 'Hosting & Maintenance included during 2-year minimum contract. After 2 years: Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
-        },
-        {
-          title: 'Premium',
-          price: '$285/month',
-          features: [
-            { text: '15 pages', included: true },
-            { text: 'Fully Custom Design', included: true },
-            { text: 'Ultimate SEO Tactics', included: true },
-            { text: 'Advanced Content Solutions', included: true },
-            { text: 'SSL/TLS Encryption', included: true },
-            { text: 'Google Business Profile and Analytics Setup', included: true },
-            { text: 'Standard Contact Form', included: true },
-            { text: 'Custom Domain Email Setup', included: true },
-            { text: 'Google Business Profile Optimization', included: true },
-            { text: 'Local SEO Optimization', included: true },
-            { text: 'Google Business Profile Management', included: true },
-            { text: 'Custom Website Animations', included: true },
-          ],
-          additional: 'Hosting & Maintenance included during 2-year minimum contract. After 2 years: Hosting & Maintenance: $25/month, Edits: $50/hour (1-hour minimum). For a detailed add-ons list, visit our services page.',
-        },
-      ],
-    },
-  ];
-
   return (
     <section className="pricing-section">
       <div className="container">
-        <h2>Our Pricing</h2>
+        <h2>{title}</h2>
         <div className="carousel">
           <div
             className="carousel-slides"
@@ -217,6 +88,7 @@ const PricingSection = () => {
                       features={card.features}
                       additional={card.additional}
                       highlightColor={slide.highlightColor}
+                      flicker={slide.flicker || false}
                     />
                   ))}
                 </div>
