@@ -107,6 +107,11 @@ body {
       color: $secondary;
       text-shadow: 0 0 10px $secondary;
     }
+
+    &:active {
+      color: $secondary-700;
+      transition: color .1s ease;
+    }
   }
 
   .nav-menu {
@@ -156,8 +161,8 @@ body {
         }
 
         &:active {
-          color: $primary-400;
-          transition: color .3s ease;
+          color: $secondary-700;
+          transition: color .1s ease;
         }
       }
   
