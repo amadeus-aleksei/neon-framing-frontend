@@ -27,7 +27,7 @@ const AddOnItem = ({ addOn }) => {
   return (
     <div className="add-on-item">
       <div 
-        className="add-on-title-wrapper" 
+        className="add-on-item-title-wrapper" 
         onClick={toggleOpen} 
         role="button" 
         tabIndex="0" 
@@ -37,9 +37,9 @@ const AddOnItem = ({ addOn }) => {
         <span>{isOpen ? '-' : '+'}</span>
       </div>
       {isOpen && (
-        <div className="add-on-details">
-          <p className="add-on-pricing">{formatPricing(pricing)}</p>
-          <p className="add-on-fine-print">{finePrint}</p>
+        <div className="add-on-item-details">
+          <p className="add-on-item-pricing">{formatPricing(pricing)}</p>
+          <p className="add-on-item-description">{finePrint}</p>
           {demoRoute && <Link to={demoRoute} className="btn">View Demo</Link>}
         </div>
       )}
