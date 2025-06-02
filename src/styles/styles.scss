@@ -10,7 +10,7 @@ $black: #000;
 $gray: #1a1a1a;
 $dark-gray: $background;
 
-
+// MUI color shades
 $primary-900: #009900;
 $primary-800: #00be00;
 $primary-700: #00d300;
@@ -35,6 +35,7 @@ $secondary-50: #ffe2ff;
 
 $triadic: #00ffff;
 
+// Keyframes
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     text-shadow: 0 0 10px $primary, 0 0 20px $primary, 0 0 30px $primary;
@@ -55,7 +56,7 @@ $triadic: #00ffff;
   }
 }
 
-// Helper classes
+// Helper Classes
 .flicker {
   animation: flicker .8s infinite alternate;
 }
@@ -67,6 +68,11 @@ $triadic: #00ffff;
 .purple-glow {
   color: $secondary;
   text-shadow: 0 0 10px $secondary;
+}
+
+// Main, body, and sections
+main {
+  padding-top: 4rem;
 }
 
 body {
@@ -197,10 +203,7 @@ body {
   }
 }
 
-main {
-  padding-top: 4rem;
-}
-// Rest of your SCSS remains unchanged (e.g., .hero, .services-section, etc.)
+
 
 .hero {
   background-color: $background2;
@@ -442,7 +445,6 @@ footer {
   }
 }
 
-
 .pricing-section {
   display: flex;
   flex-direction: column;
@@ -627,26 +629,6 @@ footer {
   box-shadow: 0 0 20px $primary;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .add-ons-section {
   align-items: center;
   display: flex;
@@ -721,6 +703,17 @@ footer {
         letter-spacing: 1px;
         padding-top: .8em;
         color: $triadic;
+  
+        .btn {
+          text-align: center;
+          margin-top: 1rem; // Adjust margin for better spacing
+          width: 10em;
+
+        }
+        
+        a.btn {
+          text-decoration: none; // Remove underline for anchor tags with btn class
+        }
 
         .add-on-pricing {
           font-weight: bold;
@@ -740,42 +733,26 @@ footer {
   }
 }
 
-
 .info-window {
   color: $black;
   background: $white;
   padding: '';
 }
 
-.add-on-details {
-  .btn {
-    text-align: center;
-    margin-top: 1rem; // Adjust margin for better spacing
-    width: 8em;
-  }
-}
-a.btn {
-  text-decoration: none; // Remove underline for anchor tags with btn class
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .map-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 20px;
+
+  h1 {
+    padding-top: 2rem;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: $primary;
+    text-shadow: 0 0 5px $primary;
+  }
 
   .address-form-container {
     margin-top: 2em;
@@ -818,23 +795,6 @@ a.btn {
     margin-top: 2em;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .input-container {
   position: relative;
