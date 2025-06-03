@@ -18,15 +18,15 @@ const Homepage = () => {
       demoRoute: "/services/google-maps"
     },
     {
-      title: "Live Chat Support",
-      pricing: { oneTime: "$200", monthly: "$20" },
-      finePrint: "Implement live chat for real-time customer support.",
+      title: "Custom Forms",
+      pricing: { oneTime: "$400/form", monthly: "$35/form" },
+      finePrint: "Create advanced forms with conditional logic and integrations.",
       demoRoute: "/services/form-demo"
     },
     {
-      title: "Custom Forms",
-      pricing: { oneTime: "$400/form", monthly: "$35/form" },
-      finePrint: "Create advanced forms with conditional logic and integrations."
+      title: "Live Chat Support",
+      pricing: { oneTime: "$200", monthly: "$20" },
+      finePrint: "Implement live chat for real-time customer support.",
     },
     {
       title: "Blog System",
