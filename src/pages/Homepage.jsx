@@ -21,6 +21,7 @@ const Homepage = () => {
       title: "Live Chat Support",
       pricing: { oneTime: "$200", monthly: "$20" },
       finePrint: "Implement live chat for real-time customer support.",
+      demoRoute: "/services/form-demo"
     },
     {
       title: "Custom Forms",
