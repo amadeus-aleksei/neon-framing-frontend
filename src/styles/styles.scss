@@ -886,3 +886,571 @@ footer {
 .clear-button:hover {
   color: #666;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-demo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    padding-top: 2rem;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: $primary;
+    text-shadow: 0 0 5px $primary;
+  }
+
+  form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+    width: 20em;
+    margin: 0 auto;
+    gap: .8em;
+
+    input, select, textarea {
+      padding: 0.8rem;
+      border: 1px solid $primary;
+      border-radius: 4px;
+      background-color: $background;
+      color: $primary;
+      /* No z-index needed here */
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 5px $primary;
+      }
+
+      &:hover {
+        border-color: var(--secondary);
+      }
+    }
+
+    .error {
+      color: #ff0000;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .date-picker {
+    width: 100%;
+    /* z-index: 100; can be removed if not positioned, but keeping it doesn’t hurt */
+  }
+
+  .submit-button {
+    padding: 0.8rem 1.5rem;
+    background-color: $primary;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--primary);
+
+    &:hover {
+      box-shadow: 0 0 20px var(--primary);
+    }
+  }
+
+  .react-datepicker {
+    border: 1px solid $primary;
+    z-index: 10000 !important; /* Ensures the calendar popup is on top */
+  }
+
+  .react-datepicker__header {
+    background-color: $background;
+    color: $white;
+  }
+
+  .react-datepicker__day {
+    color: $white;
+    &:hover {
+      background-color: $primary;
+      color: $black;
+    }
+  }
+
+  .react-datepicker__time-list-item {
+    color: $white;
+    &:hover {
+      background-color: $primary;
+      color: $black;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.book-now-section {
+  padding: 40px 20px;
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $primary-900;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+
+  .section-description {
+    font-size: 16px;
+    color: $background;
+    max-width: 600px;
+    margin-bottom: 2em;
+    line-height: 1.6;
+  }
+
+  .book-now-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    max-width: 1000px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .booking-form {
+    max-width: 500px;
+    width: 100%;
+    background-color: $background2;
+    padding: 20px;
+    border: 1px solid $gray;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.618em;
+
+      .section-subtitle {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: $primary-900;
+        margin-bottom: 0.5em;
+        line-height: 1.3;
+        text-align: left;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-900;
+        text-align: left;
+      }
+
+      select,
+      input,
+      .date-picker {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid $gray;
+        border-radius: 4px;
+        background-color: $background;
+        color: $white;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: $primary-400;
+          outline: none;
+        }
+      }
+
+      .date-picker {
+        width: 100%;
+      }
+
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 0.5em;
+
+        .checkbox-label {
+          display: flex;
+          align-items: center;
+          gap: 0.5em;
+          font-size: 14px;
+          color: $gray;
+
+          input {
+            margin: 0;
+          }
+        }
+      }
+
+      .checkbox-group-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        margin-top: 0.5em;
+
+        .checkbox-card {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 15px;
+          border: 2px solid $gray;
+          border-radius: 4px;
+          background-color: $background;
+          cursor: pointer;
+          transition: border-color 0.3s ease, background-color 0.3s ease;
+          position: relative;
+
+          input {
+            display: none;
+          }
+
+          &.selected {
+            border-color: $primary-400;
+            border-width: 2px;
+            background-color: $primary-100;
+
+            .checkbox-card-label {
+              font-weight: 600;
+              color: $primary-900;
+            }
+
+            .checkbox-card-icon {
+              color: $primary-900; // Set to primary-900 when selected
+            }
+
+            .checkbox-card-price {
+              color: $primary-900;
+              background-color: $primary-100;
+            }
+          }
+
+          &:hover {
+            border-color: $primary-400;
+            background-color: $primary-50;
+
+            .checkbox-card-price {
+              color: $primary-900;
+              background-color: $primary-50;
+            }
+
+            .checkbox-card-label {
+              color: $primary-900;
+            }
+
+            .checkbox-card-icon {
+              color: $primary-900; // Ensure primary-900 on hover
+            }
+          }
+
+          .checkbox-card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5em;
+            text-align: center;
+          }
+
+          .checkbox-card-icon {
+            font-size: 24px;
+            color: $primary-900;
+          }
+
+          .checkbox-card-label {
+            font-size: 14px;
+            color: $primary-50;
+            line-height: 1.5;
+            transition: color 0.3s ease; // Added transition for smooth color change
+          }
+
+          .checkbox-card-price {
+            font-size: 12px;
+            font-weight: 600;
+            color: $primary-400;
+            background-color: $background;
+            padding: 2px 8px;
+            border-radius: 12px;
+            transition: color 0.3s ease, background-color 0.3s ease; // Added transitions to match card
+          }
+        }
+      }
+
+      .error {
+        color: $secondary-900;
+        font-size: 12px;
+        margin-top: 0.25em;
+      }
+    }
+
+    .submit-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      // color: $white;
+      background-color: $primary-400;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $primary-600;
+      }
+
+      &:active {
+        background-color: $primary-700;
+      }
+    }
+  }
+
+  .shopping-cart {
+    max-width: 400px;
+    width: 100%;
+    background-color: $background2;
+    padding: 20px;
+    border: 1px solid $gray;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: sticky;
+    top: 18em;
+
+    .cart-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: $primary-900;
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+      text-align: left;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: $gray;
+        line-height: 1.5;
+
+        .item-label {
+          font-weight: 500;
+          color: $primary-900;
+        }
+
+        .item-value {
+          color: $white;
+          text-align: right;
+        }
+      }
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1em;
+      border-top: 1px solid $gray;
+      font-size: 16px;
+      font-weight: 600;
+      color: $primary-900;
+      line-height: 1.5;
+
+      .total-label {
+        font-weight: 600;
+      }
+
+      .total-value {
+        color: $primary-400;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 20px 10px;
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 0.75em;
+    }
+
+    .section-description {
+      font-size: 14px;
+      margin-bottom: 1.5em;
+    }
+
+    .book-now-container {
+      grid-template-columns: 1fr;
+      gap: 1.5em;
+    }
+
+    .booking-form {
+      padding: 15px;
+      gap: 1.5em;
+
+      .form-section {
+        gap: 1em;
+
+        .section-subtitle {
+          font-size: 18px;
+        }
+      }
+
+      .form-group {
+        label {
+          font-size: 12px;
+        }
+
+        select,
+        input,
+        .date-picker {
+          font-size: 14px;
+          padding: 8px;
+        }
+
+        .checkbox-group {
+          .checkbox-label {
+            font-size: 12px;
+          }
+        }
+
+        .checkbox-group-grid {
+          grid-template-columns: 1fr;
+          gap: 0.75em;
+
+          .checkbox-card {
+            padding: 10px;
+
+            .checkbox-card-content {
+              gap: 0.3em;
+            }
+
+            .checkbox-card-icon {
+              font-size: 20px;
+            }
+
+            .checkbox-card-label {
+              font-size: 12px;
+            }
+
+            .checkbox-card-price {
+              font-size: 10px;
+              padding: 1px 6px;
+            }
+          }
+        }
+
+        .error {
+          font-size: 10px;
+        }
+      }
+
+      .submit-button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+    .shopping-cart {
+      max-width: 500px;
+      padding: 15px;
+      position: static;
+
+      .cart-title {
+        font-size: 18px;
+      }
+
+      .cart-items {
+        .cart-item {
+          font-size: 12px;
+        }
+      }
+
+      .cart-total {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    .checkbox-group-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

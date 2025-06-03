@@ -98,7 +98,7 @@ const GoogleMapsAPI = () => {
 
   return (
     <div className="map-page-container">
-      <h1>Google Maps API Integrations</h1>
+      <h1>Google Maps API Demo</h1>
       <div className="address-form-container">
         <div className="input-container">
           <Autocomplete
