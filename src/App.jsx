@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Homepage from "./pages/Homepage"
+import Homepage from "./pages/Home"
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 import Footer from './components/common/Footer'

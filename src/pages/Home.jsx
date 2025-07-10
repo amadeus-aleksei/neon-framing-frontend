@@ -9,7 +9,7 @@ import { MdAbc } from "react-icons/md";
 import AddOnsSection from "../components/sections/AddOnsSection";
 import AnimationShowcase from "../components/sections/AnimationShowcase";
 
-const Homepage = () => {
+const Home = () => {
   const addOnsData = [
     {
       title: "Google Maps API Integration",
@@ -215,4 +215,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Home;

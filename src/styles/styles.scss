@@ -275,12 +275,45 @@ body {
 }
 
 .hero {
-  background-color: $background2;
+  // Establishes a positioning context for the pseudo-element
+  position: relative; 
+  overflow: hidden; // Prevents blurred edges from leaking out
+
+  // These properties remain from your original code
   padding: 8rem 2rem;
   text-align: center;
   align-content: center;
   height: 70vh;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // The pseudo-element creates the blurred background layer
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    // The path to your image might need to be adjusted
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    // This is the blur effect. Adjust the pixel value for more or less blur.
+    // filter: blur(8px);
+    
+    // Prevents hard edges from showing after the blur
+    transform: scale(1.1);
+
+    // Places the blurred layer behind the hero content
+    z-index: -1;
+  }
+
+  // Your h1, p, and button styles remain unchanged
   h1 {
     font-size: 3.5rem;
     color: $primary;
