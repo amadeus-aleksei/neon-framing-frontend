@@ -22,7 +22,7 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/services" element={<Pricing />} />
             <Route path="/services/google-maps" element={<GoogleMapsAPI />} />
-            <Route path="/services/form-demo" element={<FormDemo />} />
+            {/* <Route path="/services/form-demo" element={<FormDemo />} /> */}
             <Route path="/collection" element={<Homepage />} />
             <Route path="/about" element={<Homepage />} />
             <Route path="/contact" element={<Homepage />} />
