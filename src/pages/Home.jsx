@@ -579,7 +579,7 @@ const Home = () => {
           {titleText}
         </h1>
         <p className="main-subtitle">
-          PLEASE... Stand by. Rearchitecture in progress...
+          PLEASE... Stand by for rearchitecture in progress...
         </p>
 
         <div className="poem-container">
