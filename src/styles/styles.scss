@@ -1489,35 +1489,13 @@ footer {
 }
 
 // =======================================================
-// DEFINITIVE STYLES & ANIMATION
+// FINAL STYLES & TYPEWRITER ANIMATION
 // =======================================================
 
-@keyframes glitch-in-line {
-  0% {
-    opacity: 0;
-    transform: translateY(15px) scale(1.05);
-    text-shadow: 0 0 2px transparent;
-  }
-  25% {
-    opacity: 0.7;
-    text-shadow: 0 0 15px $secondary, 0 0 3px $white;
-    transform: translateX(-10px) skewX(-15deg);
-  }
-  50% {
-    opacity: 0.3;
-    text-shadow: 0 0 15px $triadic, 0 0 3px $white;
-    transform: translateX(10px) skewX(15deg);
-  }
-  75% {
-    opacity: 1;
-    transform: translateY(0) scale(1) skewX(0);
-    text-shadow: 0 0 20px $primary;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1) skewX(0);
-    text-shadow: 0 0 4px rgba($primary, 0.7);
-  }
+// A single, clean animation for the blinking terminal caret.
+@keyframes blink-caret {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @keyframes rotate {
@@ -1609,10 +1587,9 @@ footer {
     font-style: italic;
   }
   
-  // The container is styled to look like a terminal output block.
   .poem-container {
     width: 100%;
-    max-width: 60ch; // Optimal reading width
+    max-width: 60ch;
     padding: 2rem;
     border: 1px solid rgba($primary, 0.2);
     background: rgba($black, 0.2);
@@ -1625,7 +1602,7 @@ footer {
     text-shadow: 0 0 5px $triadic;
     margin: 0 0 1.5rem 0;
     opacity: 0.9;
-    text-align: left; // Aligned left like a code comment.
+    text-align: left;
   }
 
   .poem-text {
@@ -1634,19 +1611,29 @@ footer {
     margin: 0;
     font-style: italic;
     color: rgba($white, 0.9);
-    line-height: 2.2; // Generous line spacing for readability.
-    text-align: left; // Poems are read left-to-right.
-
+    line-height: 2.2;
+    text-align: left;
+    
+    // The parent needs to be relative for the absolutely positioned caret to work
+    position: relative;
+    
     .poem-line {
       display: block;
-      opacity: 0; // Each line is invisible by default.
-      white-space: pre-wrap; // CRITICAL: Preserves all spacing and line breaks from the string.
+      min-height: 1em; // Ensures empty lines take up space
+      white-space: pre-wrap;
     }
+  }
 
-    &.animate .poem-line {
-      // A refined easing curve for a smooth, high-quality finish.
-      animation: glitch-in-line 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-    }
+  // The caret is styled as a classic terminal block cursor.
+  .caret {
+    display: inline-block;
+    width: 0.7em;
+    height: 1.3em;
+    background-color: $primary;
+    box-shadow: 0 0 5px $primary, 0 0 10px $primary;
+    animation: blink-caret 1.2s step-end infinite;
+    margin-left: 0.2em;
+    vertical-align: bottom; // Aligns with the baseline of the text
   }
 }
 
