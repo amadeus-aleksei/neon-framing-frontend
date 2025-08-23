@@ -1489,8 +1489,46 @@ footer {
 }
 
 // =======================================================
-// Under Construction / Coming Soon Page Styles
+// DEFINITIVE STYLES & ANIMATION
 // =======================================================
+
+@keyframes glitch-in-line {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(1.05);
+    text-shadow: 0 0 2px transparent;
+  }
+  25% {
+    opacity: 0.7;
+    text-shadow: 0 0 15px $secondary, 0 0 3px $white;
+    transform: translateX(-10px) skewX(-15deg);
+  }
+  50% {
+    opacity: 0.3;
+    text-shadow: 0 0 15px $triadic, 0 0 3px $white;
+    transform: translateX(10px) skewX(15deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0) scale(1) skewX(0);
+    text-shadow: 0 0 20px $primary;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) skewX(0);
+    text-shadow: 0 0 4px rgba($primary, 0.7);
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
 
 .coming-soon-container {
   display: flex;
@@ -1502,48 +1540,124 @@ footer {
   text-align: center;
   padding: 2rem;
   font-family: 'Courier New', monospace;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba($primary, 0), rgba($primary, 0.05) 1px, rgba($primary, 0) 2px);
+    animation: scanline 12s linear infinite;
+    opacity: 0.5;
+  }
 
   .content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
   }
 
   .icon {
-    font-size: 6rem;
+    font-size: 5rem;
     color: $primary;
     text-shadow: 0 0 10px $primary, 0 0 20px $primary;
+    animation: flicker 0.8s infinite alternate, rotate 20s linear infinite;
   }
 
-  .title {
-    font-size: 3.5rem;
+  .title.glitch {
+    position: relative;
+    font-size: 3rem;
     color: $primary;
     margin: 0;
+    &::before, &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $background;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+    }
+    &::before {
+      left: 2px;
+      text-shadow: -2px 0 $secondary;
+      animation: glitch 3s infinite linear alternate-reverse;
+    }
+    &::after {
+      left: -2px;
+      text-shadow: -2px 0 $triadic;
+      animation: glitch 2s infinite linear alternate-reverse;
+    }
   }
 
-  .subtitle {
-    font-size: 1.5rem;
+  .main-subtitle {
+    font-size: 1.25rem;
+    color: $triadic;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+  }
+  
+  // The container is styled to look like a terminal output block.
+  .poem-container {
+    width: 100%;
+    max-width: 60ch; // Optimal reading width
+    padding: 2rem;
+    border: 1px solid rgba($primary, 0.2);
+    background: rgba($black, 0.2);
+    box-shadow: 0 0 20px rgba($primary, 0.1), inset 0 0 10px rgba($black, 0.5);
+  }
+
+  .poem-intro {
+    font-size: 1.1rem;
     color: $triadic;
     text-shadow: 0 0 5px $triadic;
-    line-height: 1.6;
-    max-width: 600px;
+    margin: 0 0 1.5rem 0;
+    opacity: 0.9;
+    text-align: left; // Aligned left like a code comment.
+  }
+
+  .poem-text {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    color: rgba($white, 0.9);
+    line-height: 2.2; // Generous line spacing for readability.
+    text-align: left; // Poems are read left-to-right.
+
+    .poem-line {
+      display: block;
+      opacity: 0; // Each line is invisible by default.
+      white-space: pre-wrap; // CRITICAL: Preserves all spacing and line breaks from the string.
+    }
+
+    &.animate .poem-line {
+      // A refined easing curve for a smooth, high-quality finish.
+      animation: glitch-in-line 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
   }
 }
 
-// Media query for smaller screens
+// Media query adjustments
 @media (max-width: 767px) {
   .coming-soon-container {
-    .icon {
-      font-size: 4rem;
-    }
-
-    .title {
-      font-size: 2.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.2rem;
-    }
+    .icon { font-size: 4rem; }
+    .title.glitch { font-size: 2.2rem; }
+    .main-subtitle { font-size: 1rem; }
+    .poem-container { padding: 1.5rem; }
+    .poem-intro { font-size: 1rem; }
+    .poem-text { font-size: 0.9rem; }
   }
 }
